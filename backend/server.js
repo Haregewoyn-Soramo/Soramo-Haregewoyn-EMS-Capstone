@@ -1,8 +1,6 @@
 require('dotenv').config()
 const express = require('express')
 const path = require('path')
-const routes = require('./routes/router')
-const userRoutes = require('./routes/userRoutes')
 const {logger, logEvents} = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const cookieParser = require('cookie-parser')
@@ -13,6 +11,15 @@ const mongoose = require('mongoose')
 const corsOptions = require('./config/coresOPtions')
 const {authenticateToken} = require('./middleware/roleChecking')
 
+const KPIRoutes = require('./routes/KPIs')
+const userRoutes = require('./routes/userRoutes')
+const feedbackRoutes = require('./routes/feedbackRoutes')
+const attendanceRouts = require('./routes/attendanceRoute')
+const notificationRoutes = require('./routes/notificationRoutes')
+const loginRoute = require('./routes/loginRoute')
+const reportRoutes = require('./routes/reportRoutes');
+
+
 const app = express()
 const port = process.env.PORT || 4000
 
@@ -22,15 +29,20 @@ emitter.setMaxListeners(20);
 connectBD()
 
 app.use(logger)
-app.use(authenticateToken)
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes)
-app.use('/users', userRoutes)
+app.use('/api/kpi', KPIRoutes)
+app.use('/api/user', userRoutes)
+app.use('/api/feedback', feedbackRoutes)
+app.use('/api/attendance', attendanceRouts)
+app.use('/api/notification', notificationRoutes)
+app.use('/api/report', reportRoutes);
+app.use('/api', loginRoute)
+
 
 
 app.all('*', (req, res) =>{
