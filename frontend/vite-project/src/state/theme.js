@@ -18,16 +18,16 @@ export const tokensDark = {
     1000: "#000000", 
   },
   primary: {
-    // blue
-    100: "#d3d4de",
-    200: "#a6a9be",
-    300: "#7a7f9d",
-    400: "#4d547d",
-    500: "#21295c",
-    600: "#191F45", 
-    700: "#141937",
-    800: "#0d1025",
-    900: "#070812",
+    // shades of #0C0C0C
+    100: "#e5e5e5",
+    200: "#cccccc",
+    300: "#b2b2b2",
+    400: "#999999",
+    500: "#0C0C0C", // Main color
+    600: "#080808", // Darker main shade
+    700: "#060606",
+    800: "#030303",
+    900: "#010101",
   },
   secondary: {
     // yellow
@@ -71,7 +71,7 @@ export const themeSettings = (mode) => {
             // palette values for dark mode
             primary: {
               ...tokensDark.primary,
-              main: tokensDark.primary[400],
+              main: tokensDark.primary[500],
               light: tokensDark.primary[400],
             },
             secondary: {
@@ -107,6 +107,10 @@ export const themeSettings = (mode) => {
               default: tokensDark.grey[0],
               alt: tokensDark.grey[50],
             },
+            // text: {
+            //   primary: "#FFFFFF",
+            //   secondary: "#FFFFFF",
+            // },
           }),
     },
     typography: {
@@ -115,26 +119,33 @@ export const themeSettings = (mode) => {
       h1: {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 40,
+        
       },
       h2: {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 32,
+        
       },
       h3: {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 24,
+        
       },
       h4: {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 20,
+        
+
       },
       h5: {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 16,
+        
       },
       h6: {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 14,
+        
       },
     },
   };
