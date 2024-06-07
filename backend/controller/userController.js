@@ -51,7 +51,7 @@ const getAllUsers = async(req, res)=>{
     //create a new user
     const createNewUser =  async (req, res) => {
       try {
-        const { name, email, role, password } = req.body;
+        const { name, email, role, password, position, department, phone_number } = req.body;
 
         const existingUser = await User.findOne({ email });
         if (existingUser) {
@@ -68,7 +68,16 @@ const getAllUsers = async(req, res)=>{
         if(!role){
           emptyFields.push('role')
         }
+        if(! department){
+          emptyFields.push('department')
+        }
+        if(!position){
+          emptyFields.push('position')
+        }
         if(!password){
+          emptyFields.push('password')
+        }
+        if(!phone_number){
           emptyFields.push('password')
         }
 
@@ -79,10 +88,13 @@ const getAllUsers = async(req, res)=>{
         const hashedPassword = await bcrypt.hash(password, 10);
     
         const newUser = new User({
+          department,
+          position,
           name,
           email,
           role,
-          password: hashedPassword
+          password: hashedPassword,
+          phone_number
         });
     
         await newUser.save();

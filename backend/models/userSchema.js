@@ -24,6 +24,21 @@ const UserSchema = new Schema({
     required: true,
     min: 6
   },
+  position: { 
+    type: String,
+    required: true,
+    min: 3
+ },
+  department: {
+     type: String,
+     required: true,
+     min: 3
+  },
+  phone_number:  {
+    type: Number,
+    required: true,
+    min: 10
+ },
   created_at: {
     type: Date,
     default: Date.now

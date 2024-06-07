@@ -7,6 +7,10 @@ import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import { useMemo } from 'react';
 import Dashboard from './scenes/Dashboard'
 import Layout from './scenes/Layout'
+import KPI from './scenes/KPI'
+import Tasks from './scenes/Tasks'
+import EmployeesOfCompany from './scenes/Employee';
+
 
 
 
@@ -23,6 +27,9 @@ function App() {
           <Route element = {<Layout />}>
             <Route path= '/' element = {<Navigate to = '/dashboard' replace />} />
             <Route path= '/dashboard' element = {< Dashboard />} />
+            <Route path= '/KPI' element = {< KPI />} />
+            <Route path= '/tasks' element = {< Tasks/>} />
+            <Route path= '/Employees' element = {< EmployeesOfCompany/>} />
            </Route>
          </Routes>
       </ThemeProvider>

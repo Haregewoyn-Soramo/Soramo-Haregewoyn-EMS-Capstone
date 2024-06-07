@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const {createEmpKPI, DeleteEmpKPI, updateEmpKPI, getEmpKPIById, employeeKPI} = require('../controller/kpiController')
+const {createEmpKPI, DeleteEmpKPI, updateEmpKPI, getEmpKPIById, employeeKPI, getAggregateKPIs, getAggregateKPIsById } = require('../controller/kpiController')
 
 // Get all KPIs (admin and Managers only)
 // router.get('/', authenticateToken, checkRole(['admin', 'manager']), getAllKPIs)
@@ -10,6 +10,11 @@ router.get('/', employeeKPI )
  //get KPI by Id
 // router.get('/:id', authenticateToken, checkRole(['admin','manager', 'employee']),getKPIssById)
 router.get('/:id', getEmpKPIById )
+
+router.get('/aggregate', getAggregateKPIs )
+
+
+router.get('/aggregate/:id', getAggregateKPIsById  )
 
 
 //create new KPI

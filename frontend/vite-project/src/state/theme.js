@@ -41,6 +41,7 @@ export const tokensDark = {
     700: "#997d3d",
     800: "#665429",
     900: "#332a14",
+
   },
 };
 
@@ -107,10 +108,10 @@ export const themeSettings = (mode) => {
               default: tokensDark.grey[0],
               alt: tokensDark.grey[50],
             },
-            // text: {
-            //   primary: "#FFFFFF",
-            //   secondary: "#FFFFFF",
-            // },
+            text: {
+              primary: "#007BA7",
+              secondary: "#00693E",
+            },
           }),
     },
     typography: {
