@@ -8,3 +8,49 @@ body,
   width: 100%;
   font-family: "Inter", sans-serif;
 }
+
+.signupForm, .loginForm, .productForm{
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+input{
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button{
+  background:#03033b;
+  border: 0;
+  color: whitesmoke;
+  padding: 10px;
+  font-family: roboto;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+div .errorState{
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid #e71951;
+  border-radius: 4px;
+  margin: 20px 0;
+  color: #e71951;
+  
+}
+input.errorState{
+  border: 1px solid #e71951;
+}
+label{
+  display: block;
+  color: black;
+}

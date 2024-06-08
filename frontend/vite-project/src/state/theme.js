@@ -1,5 +1,3 @@
-
-
 // color design tokens export
 export const tokensDark = {
   grey: {
@@ -18,31 +16,31 @@ export const tokensDark = {
     1000: "#000000", 
   },
   primary: {
-    // shades of #0C0C0C
-    100: "#e5e5e5",
-    200: "#cccccc",
-    300: "#b2b2b2",
-    400: "#999999",
-    500: "#0C0C0C", // Main color
-    600: "#080808", // Darker main shade
-    700: "#060606",
-    800: "#030303",
-    900: "#010101",
+    50: "#daebe7",
+    100: "#b6d6cd",
+    200: "#6db39d",
+    300: "#24866f",
+    400: "#006649",
+    500: "#00401a", // Main color
+    600: "#003313",
+    700: "#00200d",
+    800: "#001208",
+    900: "#000804",
   },
   secondary: {
-    // yellow
-    50: "#f0f0f0", 
-    100: "#fff6e0",
-    200: "#ffedc2",
-    300: "#ffe3a3",
-    400: "#ffda85",
-    500: "#ffd166",
-    600: "#cca752",
-    700: "#997d3d",
-    800: "#665429",
-    900: "#332a14",
-
+    50: "#e5fffe",
+    100: "#ccfffe",
+    200: "#99ffed",
+    300: "#66ffdd",
+    400: "#33ffbb",
+    500: "#1aac83", // Main color
+    600: "#108e60",
+    700: "#0c6e49",
+    800: "#084e33",
+    900: "#042e1c",
   },
+  
+  
 };
 
 // function that reverses the color palette
@@ -77,15 +75,19 @@ export const themeSettings = (mode) => {
             },
             secondary: {
               ...tokensDark.secondary,
-              main: tokensDark.secondary[300],
+              main: tokensDark.secondary[500],
             },
             neutral: {
               ...tokensDark.grey,
               main: tokensDark.grey[500],
             },
             background: {
-              default: tokensDark.primary[600],
-              alt: tokensDark.primary[500],
+              default: tokensDark.primary[800],
+              alt: tokensDark.primary[700],
+            },
+            text: {
+              primary: "#ffffff",
+              secondary: "#f0f0f0",
             },
           }
         : {
@@ -109,8 +111,8 @@ export const themeSettings = (mode) => {
               alt: tokensDark.grey[50],
             },
             text: {
-              primary: "#007BA7",
-              secondary: "#00693E",
+              primary: "#000000",
+              secondary: "#333333",
             },
           }),
     },

@@ -10,6 +10,10 @@ import Layout from './scenes/Layout'
 import KPI from './scenes/KPI'
 import Tasks from './scenes/Tasks'
 import EmployeesOfCompany from './scenes/Employee';
+import Report from './scenes/Report';
+import Login from './scenes/Login';
+import { UseAuthContext } from './hooks/UseAuthContext';
+import CreateKPI from './scenes/CreateKPI';
 
 
 
@@ -17,6 +21,8 @@ import EmployeesOfCompany from './scenes/Employee';
 function App() {
   const mode = useSelector((state)=>state.global.mode);
   const theme = useMemo(()=>createTheme(themeSettings(mode)),[mode]);
+  const {user} = UseAuthContext()
+
 
   return (
    <div className='app'>
@@ -30,6 +36,9 @@ function App() {
             <Route path= '/KPI' element = {< KPI />} />
             <Route path= '/tasks' element = {< Tasks/>} />
             <Route path= '/Employees' element = {< EmployeesOfCompany/>} />
+            <Route path= '/Custom' element = {< Report/>} />
+            <Route path= '/login' element = {user ? < Login/> : <Navigate to= '/'/>} />
+            <Route path= '/createkpi' element = {<CreateKPI/>} />
            </Route>
          </Routes>
       </ThemeProvider>

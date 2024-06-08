@@ -28,7 +28,6 @@ const KPISchema = new Schema({
   kpi_score: {
     type: Number,
     required: true,
-    max: 6
   },
   monthly_kpi: {
     type: Number,

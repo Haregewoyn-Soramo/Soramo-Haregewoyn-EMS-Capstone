@@ -2,7 +2,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
   mode: 'dark',
-  userId: "6663307a025de9d17a8b3f3f",
+  // userId: null,
+  userId: '6663307a025de9d17a8b3f3f'
 };
 export const globalSlice = createSlice({
   name: 'global',
@@ -10,11 +11,14 @@ export const globalSlice = createSlice({
   reducers:{
     setMode: (state) =>{
       state.mode = state.mode === 'light' ? 'dark' : 'light';
+    },
+    setUserId: (state, action) =>{
+      state.userId = action.payload;
     }
   }
  
 })
 
-export const {setMode} = globalSlice.actions;
+export const {setMode, setUserId} = globalSlice.actions;
 
 export default globalSlice.reducer;

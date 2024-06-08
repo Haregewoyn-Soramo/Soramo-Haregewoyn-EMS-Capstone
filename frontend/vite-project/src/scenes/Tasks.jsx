@@ -50,13 +50,13 @@ const Task = ({
               <Typography variant="h5" component="div" sx={{mb: "1.5rem"}}>
                           Title: {title}
                </Typography>
-               <Typography sx={{fontSize : 14, mb: "1.2rem"}} color={theme.palette.secondary[600]} gutterBottom>
+               <Typography sx={{fontSize : 12, mb: "1.2rem", fontWeight:"bold"}} color= "#666" gutterBottom>
                            Priority: {priority}
                </Typography>
-               <Typography sx={{mb: "1.2rem"}} color={theme.palette.secondary[400]}>
+               <Typography sx={{mb: "1.2rem"}} color="#666">
                         Deadline: {new Date(deadline).toLocaleString()}
                </Typography>
-               <Typography sx={{mb: "1.2rem"}} color={theme.palette.secondary[400]}>
+               <Typography sx={{mb: "1.2rem"}} color="#666">
                             Status: {status}{getStatusIcon(status)}
                </Typography>
             </CardContent>
