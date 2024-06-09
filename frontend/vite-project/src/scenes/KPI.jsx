@@ -1,10 +1,11 @@
-import { Box, Button } from '@mui/material';
-import { useGetKPIQuery } from "../state/api";
+import { Box, Button, IconButton } from '@mui/material';
+import { useGetKPIQuery, useDeleteKPIMutation } from "../state/api";
 import Header from "../Components/Header";
 import { DataGrid } from '@mui/x-data-grid';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const KPIPerformance = () => {
   const { data, isLoading } = useGetKPIQuery();
@@ -13,6 +14,21 @@ const KPIPerformance = () => {
   const theme = useTheme();
 
   console.log('data:', data);
+
+  const [deleteKPI, { isLoading: deleteLoading }] = useDeleteKPIMutation();
+  const [success, setSuccess] = useState('');
+  const [deletedId, setDeletedId] = useState('');
+
+  const handleDelete = async (id) => {
+    try {
+      await deleteKPI({ id }).unwrap();
+      console.log('deleted kpi id:', id);
+      setSuccess("Delete KPI successfully");
+      setDeletedId('');
+    } catch (error) {
+      console.error('Error deleting KPI:', error);
+    }
+  };
 
   const handleClick = (event, path) => {
     setAnchorEl(event.currentTarget);
@@ -79,6 +95,20 @@ const KPIPerformance = () => {
         const newDate = new Date(valueDate).toDateString();
         return newDate;
       }
+    },
+    {
+      field: "actions",
+      headerName: "Actions",
+      flex: 0.5,
+      renderCell: (params) => (
+        <IconButton
+          color="secondary"
+          onClick={() => handleDelete(params.row._id)}
+          disabled={deleteLoading}
+        >
+          <DeleteIcon />
+        </IconButton>
+      )
     }
   ];
 

@@ -14,6 +14,8 @@ import Report from './scenes/Report';
 import Login from './scenes/Login';
 import { UseAuthContext } from './hooks/UseAuthContext';
 import CreateKPI from './scenes/CreateKPI';
+import CreateTask from './scenes/CreateTask';
+
 
 
 
@@ -39,6 +41,7 @@ function App() {
             <Route path= '/Custom' element = {< Report/>} />
             <Route path= '/login' element = {user ? < Login/> : <Navigate to= '/'/>} />
             <Route path= '/createkpi' element = {<CreateKPI/>} />
+            <Route path= '/createtask' element = {<CreateTask/>} />
            </Route>
          </Routes>
       </ThemeProvider>

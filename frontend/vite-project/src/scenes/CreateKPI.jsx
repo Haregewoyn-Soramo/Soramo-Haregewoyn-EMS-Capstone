@@ -1,7 +1,10 @@
-import { useCreateKPIMutation } from '../state/api';
+import { useCreateKPIMutation  } from '../state/api';
 import { useTheme } from '@emotion/react';
 import { Box, Button, TextField, CircularProgress, Snackbar } from '@mui/material';
 import { useState } from 'react';
+import Header from '../Components/Header';
+
+
 
 const CreateKPI = () => {
   const theme = useTheme();
@@ -17,10 +20,11 @@ const CreateKPI = () => {
       adherence_guidelines: ''
     }
   });
-
+  
   const [createKPI, { isLoading }] = useCreateKPIMutation();
   const [success, setSuccess] = useState('')
   const [openSnackbar, setOpenSnackbar] = useState(false)
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,6 +77,7 @@ const CreateKPI = () => {
 
   return (
     <Box
+    
       component="form"
       onSubmit={handleSubmit}
       sx={{
@@ -81,9 +86,11 @@ const CreateKPI = () => {
         gap: '1rem',
         padding: '2rem',
         borderRadius: '8px',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+        boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+        // mt:"150px"
       }}
     >
+      <Header title="KPI" subtitle="Tracking Performance Excellence" />
       <TextField
         label="User ID"
         name="user_id"
