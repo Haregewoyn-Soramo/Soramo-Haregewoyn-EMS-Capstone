@@ -27,7 +27,7 @@ const navItems = [
     icon: <CheckCircleOutline />
   },
   {
-    text: "Hours Worked",
+    text: "Hours",
     icon: <AccessTimeOutlined />
   },
   {

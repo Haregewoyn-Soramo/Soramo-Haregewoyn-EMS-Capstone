@@ -15,6 +15,10 @@ import Login from './scenes/Login';
 import { UseAuthContext } from './hooks/UseAuthContext';
 import CreateKPI from './scenes/CreateKPI';
 import CreateTask from './scenes/CreateTask';
+import NotifMessage from './scenes/NotifMessage';
+import Date from './scenes/Date';
+import HoursWorked from './scenes/HourWorkde';
+
 
 
 
@@ -40,8 +44,11 @@ function App() {
             <Route path= '/Employees' element = {< EmployeesOfCompany/>} />
             <Route path= '/Custom' element = {< Report/>} />
             <Route path= '/login' element = {user ? < Login/> : <Navigate to= '/'/>} />
+            <Route path= '/message' element = {<NotifMessage/>} />
+            <Route path= '/date' element = {<Date/>} />
             <Route path= '/createkpi' element = {<CreateKPI/>} />
             <Route path= '/createtask' element = {<CreateTask/>} />
+            <Route path= '/hours' element = {<HoursWorked/>} />
            </Route>
          </Routes>
       </ThemeProvider>

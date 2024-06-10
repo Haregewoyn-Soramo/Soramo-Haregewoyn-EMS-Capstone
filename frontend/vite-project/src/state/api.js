@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const api = createApi({
   baseQuery:  fetchBaseQuery({ baseUrl:" http://localhost:5000/api" }),
   reducerPath: "EMSApi",
-  tagTypes: ['User', 'KPI', "Task", "Users"],
+  tagTypes: ['User', 'KPI', "Task", "Users", "Notification"],
   endpoints: (build) =>({
     getUsersById: build.query({
       query: (id) =>`user/${id}`,
@@ -64,10 +64,21 @@ export const api = createApi({
         method: 'DELETE',
       }),
       invalidatesTags: ["Task"],
-    })   
-  })
+    }), 
+    getNotification: build.query({
+      query: () =>  `notification`,
+        providesTags: ["Notification"]
+      }),
+      deleteNotification: build.mutation({
+        query: ({ id }) => ({
+          url: `notification/delete/${id}`,
+          method: 'DELETE',
+     }),
+        invalidatesTags: ["Notification"],
+    }),
+    })
   })
  
 
 
-export const { useGetUsersByIdQuery, useGetKPIQuery, useGetTaskQuery, useGetUsersQuery, useGetReportQuery, useCreateKPIMutation, useCreateReportMutation, useDeleteKPIMutation, useCreatetaskMutation, useDeleteTaskMutation} = api;
+export const { useGetUsersByIdQuery, useGetKPIQuery, useGetTaskQuery, useGetUsersQuery, useGetReportQuery, useCreateKPIMutation, useCreateReportMutation, useDeleteKPIMutation, useCreatetaskMutation, useDeleteTaskMutation, useGetNotificationQuery, useDeleteNotificationMutation} = api;

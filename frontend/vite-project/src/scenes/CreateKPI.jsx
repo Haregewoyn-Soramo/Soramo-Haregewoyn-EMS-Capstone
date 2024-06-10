@@ -1,8 +1,9 @@
 import { useCreateKPIMutation  } from '../state/api';
 import { useTheme } from '@emotion/react';
-import { Box, Button, TextField, CircularProgress, Snackbar } from '@mui/material';
+import { Box, Button, TextField, CircularProgress, Snackbar,Typography  } from '@mui/material';
 import { useState } from 'react';
 import Header from '../Components/Header';
+import { motion } from 'framer-motion';
 
 
 
@@ -88,6 +89,7 @@ const CreateKPI = () => {
         borderRadius: '8px',
         boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
         // mt:"150px"
+        
       }}
     >
       <Header title="KPI" subtitle="Tracking Performance Excellence" />
@@ -169,6 +171,25 @@ const CreateKPI = () => {
         message={success}
       />
       </Button>
+
+        
+      <Box sx={{  width: "80%", height: "300px", marginTop: "50px", marginBottom: "50px", margin: "auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Typography variant="h5" color="gray" textAlign="center">
+          Unlock your potential by mastering time management. Organizing your time effectively is the cornerstone of success, paving the way towards achieving your goals. Stay focused, stay disciplined, and stay productive. Embrace each moment with purpose and clarity, and watch as your aspirations transform into accomplishments.
+        </Typography>
+      </Box>
+      
+      <motion.footer
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
+      >
+        <Typography variant="body1" color="white">
+          © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>
+        </Typography>
+      </motion.footer>
+
     </Box>
   );
 };

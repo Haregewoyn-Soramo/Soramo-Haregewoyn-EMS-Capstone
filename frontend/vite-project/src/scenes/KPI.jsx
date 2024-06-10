@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Modal from '@mui/joy/Modal';
 
 const KPIPerformance = () => {
   const { data, isLoading } = useGetKPIQuery();
@@ -105,6 +106,7 @@ const KPIPerformance = () => {
           color="secondary"
           onClick={() => handleDelete(params.row._id)}
           disabled={deleteLoading}
+          sx={{color:'gray'}}
         >
           <DeleteIcon />
         </IconButton>
