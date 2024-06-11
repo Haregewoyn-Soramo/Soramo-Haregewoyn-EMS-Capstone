@@ -63,11 +63,11 @@ const CreateTask = ()=>{
       padding: theme.spacing(3),
       borderRadius: theme.shape.borderRadius,
       boxShadow: theme.shadows[3],
-      // backgroundColor: theme.palette.background.paper,
       transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
       '&:hover': {
         transform: 'scale(1.02)',
         boxShadow: theme.shadows[10],
+       
       }
     }}
     >
@@ -166,7 +166,7 @@ const CreateTask = ()=>{
       )}
     </Box>
 
-        <Box sx={{  width: "50%", height: "150px", marginTop: "50px", marginBottom: "50px", margin: "auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <Box sx={{  width: "50%", height: "150px", marginTop: "50px", marginBottom: "50px", margin: "auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <Typography variant="h5" color="gray" textAlign="center">
     Efficient time management lays the groundwork for goal attainment. Stay organized, stay productive, and watch your tasks transform into triumphs.
     </Typography>

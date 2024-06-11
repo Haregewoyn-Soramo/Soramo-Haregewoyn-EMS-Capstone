@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const api = createApi({
   baseQuery:  fetchBaseQuery({ baseUrl:" http://localhost:5000/api" }),
   reducerPath: "EMSApi",
-  tagTypes: ['User', 'KPI', "Task", "Users", "Notification"],
+  tagTypes: ['User', 'KPI', "Task", "Users", "Notification", "Attendance"],
   endpoints: (build) =>({
     getUsersById: build.query({
       query: (id) =>`user/${id}`,
@@ -22,7 +22,21 @@ export const api = createApi({
       query:() =>`user`,
       providesTags: ["Users"],
     }),
-
+    deleteUsers: build.mutation({
+      query:({id}) =>({
+        url: `user/delete/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["User"],
+    }),
+    addEmployee: build.mutation({
+      query:(newUser)=>({
+        url:`user/register`,
+      method: 'POST',
+      body: newUser,
+      }),
+      invalidatesTags: ["User"],
+    }),
     getReport: build.query({
       query:() =>`report`,
       providesTags: ["Report"],
@@ -76,9 +90,13 @@ export const api = createApi({
      }),
         invalidatesTags: ["Notification"],
     }),
+    getAttendace: build.query({
+      query: () =>  `attendance`,
+        providesTags: ["Attendance"]
+      }),
     })
   })
  
 
 
-export const { useGetUsersByIdQuery, useGetKPIQuery, useGetTaskQuery, useGetUsersQuery, useGetReportQuery, useCreateKPIMutation, useCreateReportMutation, useDeleteKPIMutation, useCreatetaskMutation, useDeleteTaskMutation, useGetNotificationQuery, useDeleteNotificationMutation} = api;
+export const { useGetUsersByIdQuery, useGetKPIQuery, useGetTaskQuery, useGetUsersQuery, useGetReportQuery, useCreateKPIMutation, useCreateReportMutation, useDeleteKPIMutation, useCreatetaskMutation, useDeleteTaskMutation, useGetNotificationQuery, useDeleteNotificationMutation, useGetAttendaceQuery, useDeleteUsersMutation, useAddEmployeeMutation} = api;

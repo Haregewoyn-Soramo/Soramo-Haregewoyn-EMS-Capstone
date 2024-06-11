@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 
 
 
+
 const StyledCard = styled(Card)(({ theme }) => ({
   backgroundImage: "none",
   borderRadius: "0.55rem",
@@ -51,23 +52,23 @@ const Task = ({
   };
 
   return (
-    <StyledCard>
-      <CardContent>
+    <StyledCard sx={{backgroundImage: `url('https://images.pexels.com/photos/6238068/pexels-photo-6238068.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`}}>
+      <CardContent sx={{ padding:"20px"}} >
         <Typography variant="h5" component="div" sx={{ mb: "1.5rem", color: "black"}}>
           Title: {title}
         </Typography>
-        <Typography sx={{ fontSize: 12, mb: "1.2rem", fontWeight: "bold", color: theme.palette.secondary.main }} gutterBottom>
+        <Typography sx={{ fontSize: 12, mb: "1.2rem", fontWeight: "bold", color: 'red' }} gutterBottom>
           Priority: {priority}
         </Typography>
-        <Typography sx={{ mb: "1.2rem", color: theme.palette.text.secondary }}>
+        <Typography sx={{ mb: "1.2rem", color: 'black'}}>
           Deadline: {new Date(deadline).toLocaleString()}
         </Typography>
-        <Typography sx={{ mb: "1.2rem", fontWeight: "bold", color: theme.palette.text.secondary }}>
+        <Typography sx={{ mb: "1.2rem", fontWeight: "bold", color: 'black'}}>
           Status: {status}
         </Typography>
         <IconButton
           color="secondary"
-          sx={{position:"absolute", top:"10px", right:"10px", color:"gray"}}
+          sx={{position:"absolute", right:"10px", color:"gray"}}
           onClick={handleDelete}
           disabled={deleteLoading}
         >
@@ -134,7 +135,7 @@ const Tasks = () => {
       ) : (
         <> Loading...</>
       )}
-      <Button sx={{ marginTop: "10px", backgroundColor: "#666666", padding: "5px 8px", marginBottom: "50px", marginTop: "20px", fontWeight: "bolder", color: "#fff" }} onClick={(event) => handleClick(event, '/createtask')}>
+      <Button sx={{ marginTop: "10px", padding: "5px 8px", marginBottom: "50px", fontWeight: "bolder", color: "darkgray", marginTop:"30px"}} onClick={(event) => handleClick(event, '/createtask')}>
         Create Task
       </Button>
     </Box>

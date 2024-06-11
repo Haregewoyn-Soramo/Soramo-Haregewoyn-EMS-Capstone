@@ -51,6 +51,10 @@ const KPISchema = new Schema({
   }
 });
 
+KPISchema.virtual('timeString').get(function() {
+  return this.date.toTimeString().split(' ')[0];
+})
+
 KPISchema.pre('save', async function (next) {
   if (this.isModified('tasks') || this.isNew) {
     this.kpi_score = await calculateKPI(this);

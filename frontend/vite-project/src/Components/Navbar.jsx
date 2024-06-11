@@ -43,7 +43,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 
         <FlexBetween gap="1.5rem">
           <Button sx={{ color: theme.palette.secondary[200] }} onClick={handleClick}>Home</Button>
-          <Button sx={{ color: theme.palette.secondary[200] }} onClick={(event) => handleClick(event, '/login')}>Login</Button>
+          <Button sx={{ color: theme.palette.secondary[200] }} onClick={(event) => handleClick(event, '/signin')}>Sign In</Button>
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === 'dark' ? (
               <DarkModeOutlined sx={{ fontSize: '25px' }} />

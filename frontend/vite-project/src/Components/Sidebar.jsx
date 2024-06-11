@@ -1,102 +1,66 @@
-import{ Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, useTheme
-} from '@mui/material'
-import { DashboardOutlined, BarChartOutlined, CheckCircleOutline, AccessTimeOutlined, GradeOutlined, EventAvailableOutlined, LoginOutlined, LogoutOutlined, PersonOutline, TextFieldsOutlined, StarOutline, NotificationsNoneOutlined, MessageOutlined, AssessmentOutlined, DescriptionOutlined, ScheduleOutlined, TodayOutlined, ChevronRightOutlined, SettingsOutlined, PersonOutlined } from '@mui/icons-material';
+import {
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+  useTheme
+} from '@mui/material';
+import {
+  DashboardOutlined,
+  BarChartOutlined,
+  CheckCircleOutline,
+  AccessTimeOutlined,
+  GradeOutlined,
+  EventAvailableOutlined,
+  LoginOutlined,
+  LogoutOutlined,
+  PersonOutline,
+  TextFieldsOutlined,
+  StarOutline,
+  NotificationsNoneOutlined,
+  MessageOutlined,
+  AssessmentOutlined,
+  DescriptionOutlined,
+  ScheduleOutlined,
+  TodayOutlined,
+  ChevronRightOutlined,
+  SettingsOutlined,
+  PersonOutlined
+} from '@mui/icons-material';
 import FlexBetween from '../Components/FlexBetween';
-import ProfileImage from '../assets/prof.png'
+import ProfileImage from '../assets/prof.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-
-
-
 const navItems = [
-  {
-    text: "Dashboard",
-    icon: <DashboardOutlined />
-  },
-  {
-    text: "KPI Pereformance",
-    icon: null
-  },
-  {
-    text: "Date",
-    icon: <TodayOutlined />
-  },
-  {
-    text: "Tasks",
-    icon: <CheckCircleOutline />
-  },
-  {
-    text: "Hours",
-    icon: <AccessTimeOutlined />
-  },
-  {
-    text: "Quality of Work",
-    icon: <GradeOutlined />
-  },
-  {
-    text: "KPI",
-    icon: <BarChartOutlined />
-  },
-  {
-    text: "Attendance",
-    icon: null
-  },
-  {
-    text: "Login Time",
-    icon: <LoginOutlined />
-  },
-  {
-    text: "Logout Time",
-    icon: <LogoutOutlined />
-  },
-  {
-    text: "Feedback",
-    icon: null
-  },
-  {
-    text: "Manager Name",
-    icon: <PersonOutline />
-  },
-  {
-    text: "Feedback Text",
-    icon: <TextFieldsOutlined />
-  },
-  {
-    text: "Rating",
-    icon: <StarOutline />
-  },
-  {
-    text: "Notification",
-    icon: null
-  },
-  {
-    text: "Message",
-    icon: <MessageOutlined />
-  },
-  {
-    text: "Report",
-    icon: null
-  },
-  {
-    text: "Custom",
-    icon: <DescriptionOutlined />
-  },
-  {
-    text: "Scheduled",
-    icon: <ScheduleOutlined />
-  },
-  {
-    text: "Department",
-  },
-  {
-    text: "Employees",
-    icon: <PersonOutlined/>
-  },
-    
+  { text: "Dashboard", icon: <DashboardOutlined /> },
+  { text: "KPI Pereformance", icon: null },
+  { text: "Date", icon: <TodayOutlined /> },
+  { text: "Tasks", icon: <CheckCircleOutline /> },
+  { text: "Hours", icon: <AccessTimeOutlined /> },
+  { text: "Quality", icon: <GradeOutlined /> },
+  { text: "KPI", icon: <BarChartOutlined /> },
+  { text: "Attendance", icon: null },
+  { text: "Login", icon: <LoginOutlined /> },
+  { text: "Logout", icon: <LogoutOutlined /> },
+  { text: "Feedback", icon: null },
+  { text: "Manager Name", icon: <PersonOutline /> },
+  { text: "Feedback Text", icon: <TextFieldsOutlined /> },
+  { text: "Rating", icon: <StarOutline /> },
+  { text: "Notification", icon: null },
+  { text: "Message", icon: <MessageOutlined /> },
+  { text: "Report", icon: null },
+  { text: "Custom", icon: <DescriptionOutlined /> },
+  { text: "Scheduled", icon: <ScheduleOutlined /> },
+  { text: "Department" },
+  { text: "Employees", icon: <PersonOutlined /> },
 ];
-
-
 
 const Sidebar = ({ isNonMobile, drawerWidth, isSidebarOpen, setIsSidebarOpen, user }) => {
   const { pathname } = useLocation();
@@ -110,20 +74,28 @@ const Sidebar = ({ isNonMobile, drawerWidth, isSidebarOpen, setIsSidebarOpen, us
 
   return (
     <Box component="nav">
+      {!isNonMobile && (
+        <IconButton
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          sx={{ position: 'fixed', zIndex: 999, top: '10px', left: '10px' }}
+        >
+          <ChevronRightOutlined />
+        </IconButton>
+      )}
       {isSidebarOpen && (
         <Drawer
           open={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
-          variant="persistent"
+          variant={isNonMobile ? "persistent" : "temporary"}
           anchor="left"
           sx={{
-            width: drawerWidth,
+            width: isNonMobile ? drawerWidth : '100%',
             "& .MuiDrawer-paper": {
               color: theme.palette.secondary[150],
               backgroundColor: theme.palette.background.alt,
               boxSizing: 'border-box',
               borderWidth: isNonMobile ? 0 : "2px",
-              width: drawerWidth
+              width: isNonMobile ? drawerWidth : '100%'
             }
           }}
         >
@@ -131,7 +103,7 @@ const Sidebar = ({ isNonMobile, drawerWidth, isSidebarOpen, setIsSidebarOpen, us
             <Box m="1.5rem 2rem 2rem 3rem">
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
-                  <Typography variant="h4" fontWeight="bold" sx={{color:"#1aac83"}}>
+                  <Typography variant="h4" fontWeight="bold" sx={{ color: "#1aac83" }}>
                     EM System
                   </Typography>
                 </Box>
@@ -203,5 +175,3 @@ const Sidebar = ({ isNonMobile, drawerWidth, isSidebarOpen, setIsSidebarOpen, us
 }
 
 export default Sidebar;
-
-

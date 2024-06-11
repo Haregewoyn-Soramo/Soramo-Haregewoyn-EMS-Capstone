@@ -1,4 +1,4 @@
-import { Box, Button, IconButton } from '@mui/material';
+import { Box, Button, IconButton, Typography } from '@mui/material';
 import { useGetKPIQuery, useDeleteKPIMutation } from "../state/api";
 import Header from "../Components/Header";
 import { DataGrid } from '@mui/x-data-grid';
@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Modal from '@mui/joy/Modal';
+import { motion } from 'framer-motion';
 
 const KPIPerformance = () => {
   const { data, isLoading } = useGetKPIQuery();
@@ -152,6 +152,22 @@ const KPIPerformance = () => {
           Create KPI
         </Button>
       </Box>
+          <Box sx={{  width: "80%", height: "300px", marginTop: "50px", marginBottom: "50px", margin: "auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Typography variant="h5" color="gray" textAlign="center">
+              Unlock your potential by mastering time management. Organizing your time effectively is the cornerstone of success, paving the way towards achieving your goals. Stay focused, stay disciplined, and stay productive. Embrace each moment with purpose and clarity, and watch as your aspirations transform into accomplishments.
+            </Typography>
+          </Box>
+          
+          <motion.footer
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
+          >
+            <Typography variant="body1" color="white">
+              © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>
+            </Typography>
+          </motion.footer>
     </Box>
   );
 };

@@ -18,7 +18,10 @@ import CreateTask from './scenes/CreateTask';
 import NotifMessage from './scenes/NotifMessage';
 import Date from './scenes/Date';
 import HoursWorked from './scenes/HourWorkde';
-
+import QualityOfWork from './scenes/QualityofWork';
+import LoginAndLogout from './scenes/LoginAndLogoutTime';
+import Logout from './scenes/Logout';
+import AddEmployee from './scenes/AddEmployee';
 
 
 
@@ -36,6 +39,7 @@ function App() {
     <ThemeProvider theme={ theme}>
          <CssBaseline/>
          <Routes>
+         <Route path= '/signin' element = {!user ? < Login/> : <Navigate to= '/'/>} />
           <Route element = {<Layout />}>
             <Route path= '/' element = {<Navigate to = '/dashboard' replace />} />
             <Route path= '/dashboard' element = {< Dashboard />} />
@@ -43,12 +47,15 @@ function App() {
             <Route path= '/tasks' element = {< Tasks/>} />
             <Route path= '/Employees' element = {< EmployeesOfCompany/>} />
             <Route path= '/Custom' element = {< Report/>} />
-            <Route path= '/login' element = {user ? < Login/> : <Navigate to= '/'/>} />
             <Route path= '/message' element = {<NotifMessage/>} />
             <Route path= '/date' element = {<Date/>} />
             <Route path= '/createkpi' element = {<CreateKPI/>} />
             <Route path= '/createtask' element = {<CreateTask/>} />
             <Route path= '/hours' element = {<HoursWorked/>} />
+            <Route path= '/quality' element = {<QualityOfWork/>} />
+            <Route path= '/login' element = {<LoginAndLogout/>} />
+            <Route path= '/logout' element = {<Logout/>} />
+            <Route path= '/addemployee' element = {<AddEmployee/>}/>
            </Route>
          </Routes>
       </ThemeProvider>
