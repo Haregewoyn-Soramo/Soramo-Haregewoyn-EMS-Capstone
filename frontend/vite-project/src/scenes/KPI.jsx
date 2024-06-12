@@ -147,6 +147,7 @@ const KPIPerformance = () => {
           rows={data || []}
           columns={columns}
           getRowId={(row) => row._id}
+          sx={{color: 'white'}}
         />
         <Button sx={{ color: theme.palette.secondary[200], marginTop: "10px" }} onClick={(event) => handleClick(event, '/createkpi')}>
           Create KPI

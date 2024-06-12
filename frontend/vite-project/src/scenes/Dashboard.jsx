@@ -9,7 +9,7 @@ const Dashboard = () => {
   return (
     <Box backgroundColor="rgba(29, 33, 38, 0.4)" padding="20px">
       <Box display="flex" flexDirection={isSmallScreen ? 'column' : 'row'} width="100%" margin="auto" mt="70px" gap="20px">
-        <Box width="100%" height={isSmallScreen ? '200px' : '400px'} borderRadius="10px" backgroundSize="cover" backgroundPosition="center" style={{ backgroundImage: `url('https://images.pexels.com/photos/632470/pexels-photo-632470.jpeg?auto=compress&cs=tinysrgb&w=600')` }} />
+        <Box width="100%" height={isSmallScreen ? '200px' : '400px'} borderRadius="10px" backgroundSize="cover" backgroundPosition="center" style={{ backgroundImage: `url('https://images.pexels.com/photos/632470/pexels-photo-632470.jpeg?auto=compress&cs=tinysrgb&w=600')`,}} />
         <Box width="100%" padding="20px"  borderRadius="10px"  mt="7rem">
           <Typography textAlign="center" >
             Excellence in job performance defines a true professional. By delivering high-quality work, showing strong work ethic, and maintaining a positive attitude, you set a standard of excellence. Your dedication and collaboration drive both personal and organizational success. Keep striving for greatness; your efforts are invaluable.

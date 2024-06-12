@@ -39,24 +39,23 @@ function App() {
     <ThemeProvider theme={ theme}>
          <CssBaseline/>
          <Routes>
-         <Route path= '/signin' element = {!user ? < Login/> : <Navigate to= '/'/>} />
-          <Route element = {<Layout />}>
-            <Route path= '/' element = {<Navigate to = '/dashboard' replace />} />
+            <Route path='/signin' element={!user ? <Login /> : <Navigate to='/dashboard' />} />
+            <Route element = {<Layout />}>
+            <Route path="/" element={<Dashboard />} />
             <Route path= '/dashboard' element = {< Dashboard />} />
-            <Route path= '/KPI' element = {< KPI />} />
-            <Route path= '/tasks' element = {< Tasks/>} />
-            <Route path= '/Employees' element = {< EmployeesOfCompany/>} />
-            <Route path= '/Custom' element = {< Report/>} />
-            <Route path= '/message' element = {<NotifMessage/>} />
-            <Route path= '/date' element = {<Date/>} />
-            <Route path= '/createkpi' element = {<CreateKPI/>} />
-            <Route path= '/createtask' element = {<CreateTask/>} />
-            <Route path= '/hours' element = {<HoursWorked/>} />
-            <Route path= '/quality' element = {<QualityOfWork/>} />
-            <Route path= '/login' element = {<LoginAndLogout/>} />
-            <Route path= '/logout' element = {<Logout/>} />
-            <Route path= '/addemployee' element = {<AddEmployee/>}/>
-            <Route path= '/' element = {user ? < Dashboard/> : <Navigate to= '/signin'/>} />
+            <Route path= '/KPI' element={user ? <KPI /> : <Navigate to="/signin" />} />
+            <Route path= '/tasks' element={user ? <Tasks /> : <Navigate to="/signin" />} />
+            <Route path= '/Employees' element={user ? <EmployeesOfCompany /> : <Navigate to="/signin" />} />
+            <Route path= '/Custom' element={user ? <Report /> : <Navigate to="/signin" />} />
+            <Route path= '/message' element={user ? <NotifMessage /> : <Navigate to="/signin" />}/>
+            <Route path= '/date' element={user ? <Date /> : <Navigate to="/signin" />} />
+            <Route path= '/createkpi' element={user ? <CreateKPI /> : <Navigate to="/signin" />} />
+            <Route path= '/createtask' element={user ? <CreateTask /> : <Navigate to="/signin" />} />
+            <Route path= '/hours' element = {user? <HoursWorked/> : <Navigate to="/signin"/>} />
+            <Route path= '/quality' element={user ? <QualityOfWork /> : <Navigate to="/signin" />} />
+            <Route path= '/login' element={user ? <LoginAndLogout /> : <Navigate to="/signin" />} />
+            <Route path= '/logout' element={<Logout />} />
+            <Route path= '/addemployee' element={user ? <AddEmployee /> : <Navigate to="/signin" />}/>
            </Route>
          </Routes>
       </ThemeProvider>

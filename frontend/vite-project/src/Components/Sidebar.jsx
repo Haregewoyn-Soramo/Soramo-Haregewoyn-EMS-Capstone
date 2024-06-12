@@ -77,7 +77,7 @@ const Sidebar = ({ isNonMobile, drawerWidth, isSidebarOpen, setIsSidebarOpen, us
       {!isNonMobile && (
         <IconButton
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          sx={{ position: 'fixed', zIndex: 999, top: '10px', left: '10px' }}
+          sx={{ position: 'fixed', zIndex: 999, top: '10px', left: '10px', }}
         >
           <ChevronRightOutlined />
         </IconButton>
@@ -91,8 +91,8 @@ const Sidebar = ({ isNonMobile, drawerWidth, isSidebarOpen, setIsSidebarOpen, us
           sx={{
             width: isNonMobile ? drawerWidth : '100%',
             "& .MuiDrawer-paper": {
-              color: theme.palette.secondary[150],
-              backgroundColor: theme.palette.background.alt,
+              color:'white',
+              backgroundColor: theme.palette.mode === 'light' ? '#111111' : theme.palette.background.alt,
               boxSizing: 'border-box',
               borderWidth: isNonMobile ? 0 : "2px",
               width: isNonMobile ? drawerWidth : '100%'
@@ -137,7 +137,7 @@ const Sidebar = ({ isNonMobile, drawerWidth, isSidebarOpen, setIsSidebarOpen, us
                       }}
                       sx={{
                         backgroundColor: active === lcText ? theme.palette.secondary[300] : "transparent",
-                        color: active === lcText ? theme.palette.primary[600] : theme.palette.secondary[100],
+                        color: active === lcText ? 'white' : 'white',
                       }}
                     >
                       <ListItemIcon sx={{

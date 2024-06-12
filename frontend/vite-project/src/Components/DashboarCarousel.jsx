@@ -63,6 +63,7 @@ function DashboardCarousel() {
           height: 50,
           pl: 2,
           bgcolor: 'background.default',
+          color:'white' 
         }}
       >
         <Typography>{images[activeStep].label}</Typography>

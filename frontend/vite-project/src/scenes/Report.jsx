@@ -27,7 +27,7 @@ const Report = () => {
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="Reports Dashboard" subtitle="Generate, View, and Export Reports" />
-      <DataGrid
+      <DataGrid  sx={{color:"white"}} 
         loading={isLoading || !data}
         rows={data || []}
         columns={columns}

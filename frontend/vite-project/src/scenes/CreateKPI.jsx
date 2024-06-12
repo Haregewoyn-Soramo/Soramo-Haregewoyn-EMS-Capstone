@@ -89,7 +89,7 @@ const CreateKPI = () => {
         borderRadius: '8px',
         boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
         // mt:"150px"
-        
+        color:'white'
       }}
     >
       <Header title="KPI" subtitle="Tracking Performance Excellence" />
@@ -100,6 +100,7 @@ const CreateKPI = () => {
         onChange={handleChange}
         required
         variant="outlined"
+        sx={{color: 'white'}}
       />
       <TextField
         label="Date"
@@ -112,6 +113,7 @@ const CreateKPI = () => {
         InputLabelProps={{
           shrink: true,
         }}
+        sx={{ color: 'white' }}
       />
       <TextField
         label="Tasks"
@@ -119,6 +121,7 @@ const CreateKPI = () => {
         value={formData.tasks}
         onChange={handleChange}
         variant="outlined"
+        sx={{ color: 'white' }}
       />
       <TextField
         label="Hours Worked"
@@ -155,6 +158,7 @@ const CreateKPI = () => {
         required
         variant="outlined"
         type="number"
+        sx={{ color: 'white' }}
       />
       <Button
         type="submit"

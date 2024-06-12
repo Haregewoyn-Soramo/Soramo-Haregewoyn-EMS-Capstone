@@ -118,7 +118,7 @@ const EmployeesOfCompany  = () => {
           color: `${theme.palette.secondary[100]} !important` ,
         }
       }}>
-        <DataGrid  loading = {isLoading || !data} rows={data || []} columns={columns} getRowId={(row)=> row._id}/>
+        <DataGrid sx={{color:"white"}}  loading = {isLoading || !data} rows={data || []} columns={columns} getRowId={(row)=> row._id}/>
       </Box>
       <Button sx={{ color: theme.palette.secondary[200], marginTop: "10px" }} onClick={(event) => handleClick(event, '/addemployee')}>
         Add Employee
