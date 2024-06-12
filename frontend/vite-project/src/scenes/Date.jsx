@@ -11,7 +11,7 @@ const Date = () => {
   const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.between('sm', 'md'));
   
   return (
-    <Box>
+    <Box style={{ minHeight: "100vh", position: "relative" }} backgroundColor="rgba(29, 33, 38, 0.4)" padding='20px'>
       <Box m="1.5rem 2.5rem">
         <Header title="Calendar Selection" subtitle="Pick a Date from the Calendar Below" />
       </Box>
@@ -24,7 +24,8 @@ const Date = () => {
         justifyContent: "center", 
         alignItems: 'center', 
         ml:'2rem',
-        mr:'2rem'
+        mr:'2rem',
+        mt:"6rem"
       }}>
         <motion.div
           initial={{ opacity: 0, rotate: -10 }}
@@ -84,7 +85,7 @@ const Date = () => {
         width: isSmallScreen ? '90%' : '80%', 
         height: "300px", 
         marginTop: "50px", 
-        marginBottom: "50px", 
+        marginBottom: "0px", 
         margin: "auto", 
         display: 'flex', 
         alignItems: 'center', 
@@ -99,7 +100,8 @@ const Date = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
+        style={{ background: "#1aac83", padding: "0.5rem", textAlign: "center", position: "fixed",  bottom: 0, left: 0,
+          width: "100%",  zIndex: 1000}}
       >
         <Typography variant="body1" color="white">
           © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>

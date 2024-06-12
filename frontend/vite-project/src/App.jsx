@@ -56,6 +56,7 @@ function App() {
             <Route path= '/login' element = {<LoginAndLogout/>} />
             <Route path= '/logout' element = {<Logout/>} />
             <Route path= '/addemployee' element = {<AddEmployee/>}/>
+            <Route path= '/' element = {user ? < Dashboard/> : <Navigate to= '/signin'/>} />
            </Route>
          </Routes>
       </ThemeProvider>

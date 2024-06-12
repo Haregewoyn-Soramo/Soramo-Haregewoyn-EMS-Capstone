@@ -11,11 +11,11 @@ const HoursWorked = () => {
   const isMediumScreen = useMediaQuery('(max-width:900px)');
 
   return (
-    <Box>
-      <Box m={isSmallScreen ? "1rem" : "1.5rem 2.5rem"}>
+    <Box >
+      <Box m={isSmallScreen ? "1rem" : "1.5rem 2.5rem" }>
         <Header title="Total Worked Hours" subtitle="Reflecting Dedication and Productivity" />
       </Box>
-      <Box sx={{ display: "flex", flexDirection: isSmallScreen ? 'column' : 'row', gap: "20px", alignItems: isSmallScreen ? 'center' : 'flex-start', margin: isSmallScreen ? 'auto' : '0' }}>
+      <Box  sx={{ display: "flex", flexDirection: isSmallScreen ? 'column' : 'row', gap: "20px", alignItems: isSmallScreen ? 'center' : 'flex-start', margin: isSmallScreen ? 'auto' : '0' }}>
         <Box sx={{ width: isSmallScreen ? '90%' : isMediumScreen ? '45%' : '30%', marginLeft: isSmallScreen ? '0' : '50px', }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {data?.map((kpi) => (
@@ -72,7 +72,8 @@ const HoursWorked = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
+        style={{ background: "#1aac83", padding: "0.5rem", textAlign: "center", position: "fixed",  bottom: 0, left: 0,
+          width: "100%",  zIndex: 1000}}
       >
         <Typography variant="body1" color="white">
           © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>

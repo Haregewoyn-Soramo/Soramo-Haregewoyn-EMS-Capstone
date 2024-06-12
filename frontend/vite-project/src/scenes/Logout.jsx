@@ -23,10 +23,12 @@ const Logout = () => {
   }
 
   return (
-    <Box m="1.5rem 2.5rem">
+<Box backgroundColor="rgba(29, 33, 38, 0.4)" padding='20px'>
+
+<Box m="1.5rem 2.5rem">
       <Header title="Attendance" subtitle="Ensuring Consistency and Commitment" />
       <Box>
-      <Grid container spacing={1} sx={{}}>
+      <Grid container spacing={1} sx={{mt:'6rem'}}>
         {data && data.map((record) => (
           <Grid item xs={5} key={record._id} sx={{ m: "auto" }}>
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.2 }}>
@@ -67,7 +69,8 @@ const Logout = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
+        style={{ background: "#1aac83", padding: "0.5rem", textAlign: "center", position: "fixed",  bottom: 0, left: 0,
+          width: "100%",  zIndex: 1000}}
       >
         <Typography variant="body1" color="white">
           © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>
@@ -75,6 +78,8 @@ const Logout = () => {
       </motion.footer>
 
     </Box>
+
+     </Box>
     
   );
 };

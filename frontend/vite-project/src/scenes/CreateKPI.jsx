@@ -183,7 +183,8 @@ const CreateKPI = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
+        style={{ background: "#1aac83", padding: "0.5rem", textAlign: "center", position: "fixed",  bottom: 0, left: 0,
+          width: "100%",  zIndex: 1000}}
       >
         <Typography variant="body1" color="white">
           © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>

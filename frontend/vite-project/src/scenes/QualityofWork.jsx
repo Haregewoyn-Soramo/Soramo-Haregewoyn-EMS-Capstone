@@ -16,7 +16,7 @@ const QualityOfWork = () => {
   };
 
   return (
-    <Box>
+    <Box backgroundColor="rgba(29, 33, 38, 0.4)" padding='20px'>
       <Box m="1.5rem 2.5rem">
         <Header title="Quality of Work" subtitle="Excellence in Performance Measurement" />
       </Box>
@@ -32,6 +32,7 @@ const QualityOfWork = () => {
           justifyContent="space-between"
           rowGap="20px"
           columnGap="2.66%"
+          mt="6rem"
           sx={{ "& > div": { gridColumn: isNoneMobile ? undefined : "span 2" } }}>
           {data ? data.map((quality) => (
             <motion.div
@@ -73,6 +74,22 @@ const QualityOfWork = () => {
           )}
         </Box>
       )}
+        <Box sx={{  width: "50%", height: "150px", marginTop: "50px", marginBottom: "50px", margin: "auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Typography variant="h5" color="gray" textAlign="center">
+              Stay organized, stay productive. Efficient time management leads to success. Prioritize tasks, manage your schedule wisely, and watch your achievements grow!
+              </Typography>
+          </Box>
+          <motion.footer
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ background: "#1aac83", padding: "0.5rem", textAlign: "center", position: "fixed",  bottom: 0, left: 0,
+            width: "100%",  zIndex: 1000}}
+          >
+          <Typography variant="body1" color="white">
+            © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>
+          </Typography>
+          </motion.footer>
     </Box>
   );
 };

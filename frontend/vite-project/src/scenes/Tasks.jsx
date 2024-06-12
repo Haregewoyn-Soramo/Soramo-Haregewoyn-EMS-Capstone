@@ -8,9 +8,6 @@ import { useDeleteTaskMutation } from "../state/api";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { motion } from 'framer-motion';
 
-
-
-
 const StyledCard = styled(Card)(({ theme }) => ({
   backgroundImage: "none",
   borderRadius: "0.55rem",
@@ -68,7 +65,7 @@ const Task = ({
         </Typography>
         <IconButton
           color="secondary"
-          sx={{position:"absolute", right:"10px", color:"gray"}}
+          sx={{position:"absolute", right:"10px", color:"#555555"}}
           onClick={handleDelete}
           disabled={deleteLoading}
         >
@@ -105,61 +102,59 @@ const Tasks = () => {
   };
 
   return (
-    <Box>
-         
-                
-         <Box m="1.5rem 2.5rem">
-      <Header title="Tasks" subtitle="Track and Manage Your Assigned Tasks" />
-      {data || !isLoading ? (
-        <Box mt="20px" display="grid"
-          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-          justifyContent="space-between"
-          rowGap="20px"
-          columnGap="1.33%"
-          sx={{ "& > div": { gridColumn: isNoneMobile ? undefined : "span 4" } }}>
-          {data.map(({ _id, title, description, status, priority, deadline, created_at, user_id, updated_at }) => (
-            <Task
-              key={_id}
-              _id={_id}
-              title={title}
-              description={description}
-              status={status}
-              priority={priority}
-              deadline={deadline}
-              created_at={created_at}
-              user_id={user_id}
-              updated_at={updated_at}
-            />
-          ))}
-        </Box>
-      ) : (
-        <> Loading...</>
-      )}
-      <Button sx={{ marginTop: "10px", padding: "5px 8px", marginBottom: "50px", fontWeight: "bolder", color: "darkgray", marginTop:"30px"}} onClick={(event) => handleClick(event, '/createtask')}>
-        Create Task
-      </Button>
-    </Box>
+    <Box backgroundColor="rgba(29, 33, 38, 0.4)" padding='20px'>
+      <Box m="1.5rem 2.5rem">
+        <Header title="Tasks" subtitle="Track and Manage Your Assigned Tasks" />
+        {data || !isLoading ? (
+          <Box mt="20px" display="grid"
+            gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+            justifyContent="space-between"
+            rowGap="20px"
+            columnGap="1.33%"
+            sx={{ "& > div": { gridColumn: isNoneMobile ? undefined : "span 4",  mt:"70px"} }}>
+            {data.map(({ _id, title, description, status, priority, deadline, created_at, user_id, updated_at }) => (
+              <Task
+                key={_id}
+                _id={_id}
+                title={title}
+                description={description}
+                status={status}
+                priority={priority}
+                deadline={deadline}
+                created_at={created_at}
+                user_id={user_id}
+                updated_at={updated_at}
+              />
+            ))}
+          </Box>
+        ) : (
+          <> Loading...</>
+        )}
+        <Button sx={{ marginTop: "10px", padding: "5px 8px", marginBottom: "50px", fontWeight: "bolder", color: "darkgray", marginTop:"30px"}} onClick={(event) => handleClick(event, '/createtask')}>
+          Create Task
+        </Button>
+      </Box>
 
-<Box sx={{  width: "50%", height: "300px", marginTop: "50px", marginBottom: "50px", margin: "auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-<Typography variant="h5" color="gray" textAlign="center">
-Efficient time management lays the groundwork for goal attainment. Stay organized, stay productive, and watch your tasks transform into triumphs.
-</Typography>
-</Box>
+      <Box sx={{  width: "50%", height: "300px", marginTop: "50px", marginBottom: "50px", margin: "auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Typography variant="h5" color="gray" textAlign="center">
+          Efficient time management lays the groundwork for goal attainment. Stay organized, stay productive, and watch your tasks transform into triumphs.
+        </Typography>
+      </Box>
 
-<motion.footer
-initial={{ opacity: 0, y: 50 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ duration: 0.5 }}
-style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
->
-<Typography variant="body1" color="white">
-  © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>
-</Typography>
-</motion.footer>
-
-
+      <motion.footer
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        style={{ background: "#1aac83", padding: "0.5rem", textAlign: "center", position: "fixed",  bottom: 0, left: 0,
+          width: "100%",  zIndex: 1000}}
+      >
+        <Typography variant="body1" color="white">
+          © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>
+        </Typography>
+      </motion.footer>
     </Box>
   );
 };
 
 export default Tasks;
+

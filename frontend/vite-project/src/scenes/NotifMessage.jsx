@@ -33,7 +33,7 @@ const NotifMessage = () => {
   }
 
   return (
-          <Box>
+          <Box backgroundColor="rgba(29, 33, 38, 0.4)" padding='20px' >
           <Box m="1.5rem 2.5rem">
             <Header title="Notifications" subtitle="Stay Informed with Your Recent Notifications" />
           </Box>
@@ -44,7 +44,7 @@ const NotifMessage = () => {
               transition={{ duration: 0.5 }} 
               style={{ marginBottom: "20px" }} 
             >
-          <Card key={notification.id} sx={{ margin: "auto", width:"50%", mb:"20px", position:"relative" }}>
+          <Card key={notification.id} sx={{ margin: "auto", width:"50%", position:"relative", mt:"6rem",  background:"#013220"}}>
             <Typography sx={{fontSize:"14px", mb:'7px', textAlign:"center", mt:"20px"}}>Message: {notification.message}</Typography>
             <Typography sx={{fontSize:"12px" , mb:'14px', textAlign:"center"}}>Date: {new Date(notification.created_at).toLocaleString()}</Typography>
             <Typography sx={{fontSize:"12px" , textAlign:"center", mb:"5px", color:"gray"}}>EmpID: {notification.user_id}</Typography>
@@ -69,7 +69,8 @@ Stay informed and on top of your tasks. Manage your notifications effectively to
 initial={{ opacity: 0, y: 50 }}
 animate={{ opacity: 1, y: 0 }}
 transition={{ duration: 0.5 }}
-style={{ background: "#1aac83", padding: "1rem", textAlign: "center", marginTop: "auto" }}
+style={{ background: "#1aac83", padding: "0.5rem", textAlign: "center", position: "fixed",  bottom: 0, left: 0,
+  width: "100%",  zIndex: 1000}}
 >
 <Typography variant="body1" color="white">
   © 2024 Your Company. All rights reserved. | <a href="#" style={{ color: "#ffffff" }}>Privacy Policy</a> | <a href="#" style={{ color: "#ffffff" }}>Terms of Service</a>

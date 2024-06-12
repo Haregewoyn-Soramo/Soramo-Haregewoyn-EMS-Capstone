@@ -19,6 +19,8 @@ const notificationRoutes = require('./routes/notificationRoutes')
 const loginRoute = require('./routes/loginRoute')
 const reportRoutes = require('./routes/reportRoutes');
 const tasksRoutes = require('./routes/taskRoutes')
+const companyImageRoutes = require('./routes/companyImageRoute');
+
 
 const app = express()
 const port = process.env.PORT || 4000
@@ -43,6 +45,7 @@ app.use('/api/notification', notificationRoutes)
 app.use('/api/report', reportRoutes);
 app.use('/api', loginRoute)
 app.use('/api/task', tasksRoutes)
+app.use('/companyImages', companyImageRoutes);
 
 
 app.all('*', (req, res) =>{
