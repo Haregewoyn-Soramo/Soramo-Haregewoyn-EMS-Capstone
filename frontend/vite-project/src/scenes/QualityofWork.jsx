@@ -48,7 +48,10 @@ const QualityOfWork = () => {
                   transition: 'transform 0.2s ease',
                   transform: isCardClicked ? 'translateX(20px)' : 'translateX(0)',
                   padding: '1rem',
-                  margin: '0.5rem'
+                  margin: '0.5rem',
+                  borderRadius:"30px",
+                  backgroundColor:"#010B13",
+                  color:"darkgray"
                 }}
               >
                 <Box display="flex" flexDirection="column" alignItems="center">

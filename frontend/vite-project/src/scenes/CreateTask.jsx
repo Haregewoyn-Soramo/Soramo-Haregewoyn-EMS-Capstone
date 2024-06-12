@@ -54,7 +54,7 @@ const CreateTask = ()=>{
     
   return (
  
-    <Box backgroundColor="rgba(29, 33, 38, 0.4)" padding='20px'>
+    <Box backgroundColor="rgba(29, 33, 38, 0.4)" padding='20px' color="white">
         
         <Box
     sx={{
@@ -67,7 +67,7 @@ const CreateTask = ()=>{
       '&:hover': {
         transform: 'scale(1.02)',
         boxShadow: theme.shadows[10],
-       
+        color:"white"
       }
     }}
     >
@@ -75,7 +75,7 @@ const CreateTask = ()=>{
       <Typography variant="h4" align="center" gutterBottom>
         Create Task
       </Typography>
-      <form onSubmit={handleSubmit}>
+      <form color="white" onSubmit={handleSubmit}>
         <TextField
           label="User ID"
           name="user_id"
@@ -84,6 +84,7 @@ const CreateTask = ()=>{
           fullWidth
           margin="normal"
           required
+          sx={{color:"white" }}
         />
         <TextField
           label="Title"
