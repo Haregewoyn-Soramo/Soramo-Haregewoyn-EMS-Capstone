@@ -29,9 +29,7 @@ const HoursWorked = () => {
                   className="hoursCard"
                   sx={{
                     height: "100%",
-                    backgroundImage: `url('https://images.pexels.com/photos/707582/pexels-photo-707582.jpeg?auto=compress&cs=tinysrgb&w=600')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    background:'#555555',
                     color: "gray",
                     display: "flex",
                     flexDirection: "column",
@@ -41,13 +39,13 @@ const HoursWorked = () => {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h5" color="black" sx={{ marginBottom: "1.2rem" }}>
+                    <Typography variant="h5" color="white" sx={{ marginBottom: "1.2rem" }}>
                       Work Hours
                     </Typography>
-                    <Typography variant="body1">
+                    <Typography variant="body1" color='white' fontSize='12px'>
                       Total_worked_hours/day: {kpi.hours_worked} Hours
                     </Typography>
-                    <Typography variant="body1" sx={{ fontSize: "11px" }}>
+                    <Typography variant="body1" sx={{ fontSize: "10px", color:'white'}}>
                       EmpID: {kpi.user_id}
                     </Typography>
                   </CardContent>

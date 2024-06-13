@@ -29,18 +29,18 @@ const KPISchema = new Schema({
     type: Number,
     required: true,
   },
-  monthly_kpi: {
-    type: Number,
-    required: false
-  },
-  yearly_kpi: {
-    type: Number,
-    required: false
-  },
-  six_months_kpi: {
-    type: Number,
-    required: false
-  },
+  // monthly_kpi: {
+  //   type: Number,
+  //   required: false
+  // },
+  // yearly_kpi: {
+  //   type: Number,
+  //   required: false
+  // },
+  // six_months_kpi: {
+  //   type: Number,
+  //   required: false
+  // },
   created_at: {
     type: Date,
     default: Date.now

@@ -49,9 +49,9 @@ const Task = ({
   };
 
   return (
-    <StyledCard sx={{backgroundImage: `url('https://images.pexels.com/photos/6238068/pexels-photo-6238068.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load')`}}>
-      <CardContent sx={{ padding:"20px"}} >
-        <Typography variant="h5" component="div" sx={{ mb: "1.5rem", color: "black"}}>
+    <StyledCard sx={{backgroundImage: `url('https://images.pexels.com/photos/268351/pexels-photo-268351.jpeg?auto=compress&cs=tinysrgb&w=600')`}}>
+      <CardContent sx={{ padding:"20px" }} >
+        <Typography variant="h5" component="div" sx={{ mb: "1.5rem", color: "white"}}>
           Title: {title}
         </Typography>
         <Typography sx={{ fontSize: 12, mb: "1.2rem", fontWeight: "bold", color: 'red' }} gutterBottom>
@@ -79,12 +79,12 @@ const Task = ({
       </CardActions>
       <Collapse in={isExpanded} timeout="auto" unmountOnExit sx={{ color: theme.palette.text.secondary }}>
         <CardContent>
-          <Typography sx={{ mb: "1.2rem" }}>
+          <Typography sx={{ mb: "1.2rem" ,color:"black"}}>
             Description: {description}
           </Typography>
-          <Typography> EmpID: {user_id}</Typography>
-          <Typography> created_at: {new Date(created_at).toLocaleString()}</Typography>
-          <Typography> updated_at: {new Date(updated_at).toLocaleString()}</Typography>
+          <Typography sx={{color:'black', fontSize:'11px'}}> EmpID: {user_id}</Typography>
+          <Typography sx={{color:'black', fontSize:'11px'}}> created_at: {new Date(created_at).toLocaleString()}</Typography>
+          <Typography sx={{color:'black',fontSize:'11px'}}> updated_at: {new Date(updated_at).toLocaleString()}</Typography>
         </CardContent>
       </Collapse>
     </StyledCard>

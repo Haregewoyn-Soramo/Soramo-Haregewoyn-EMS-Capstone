@@ -82,6 +82,7 @@ const updateEmpKPI = async (req, res) => {
   }
 };
 
+
 const DeleteEmpKPI = async (req, res) => {
   try {
     const id = req.params.id;

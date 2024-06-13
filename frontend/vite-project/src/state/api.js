@@ -94,9 +94,17 @@ export const api = createApi({
       query: () =>  `attendance`,
         providesTags: ["Attendance"]
       }),
+    updateKPI: build.mutation({
+      query: ({id, ...body})=>({
+        method: 'PUT',
+        url: `kpi/update/${id}`,
+        body,
+      }),
+      invalidatesTags: ["KPI"],
+    })
     })
   })
  
 
 
-export const { useGetUsersByIdQuery, useGetKPIQuery, useGetTaskQuery, useGetUsersQuery, useGetReportQuery, useCreateKPIMutation, useCreateReportMutation, useDeleteKPIMutation, useCreatetaskMutation, useDeleteTaskMutation, useGetNotificationQuery, useDeleteNotificationMutation, useGetAttendaceQuery, useDeleteUsersMutation, useAddEmployeeMutation} = api;
+export const { useGetUsersByIdQuery, useGetKPIQuery, useGetTaskQuery, useGetUsersQuery, useGetReportQuery, useCreateKPIMutation, useCreateReportMutation, useDeleteKPIMutation, useCreatetaskMutation, useDeleteTaskMutation, useGetNotificationQuery, useDeleteNotificationMutation, useGetAttendaceQuery, useDeleteUsersMutation, useAddEmployeeMutation, useUpdateKPIMutation} = api;

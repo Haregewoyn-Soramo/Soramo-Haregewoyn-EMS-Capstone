@@ -22,7 +22,7 @@ import QualityOfWork from './scenes/QualityofWork';
 import LoginAndLogout from './scenes/LoginAndLogoutTime';
 import Logout from './scenes/Logout';
 import AddEmployee from './scenes/AddEmployee';
-
+import UpdateKPI from './scenes/UpdateKPI'
 
 
 
@@ -50,11 +50,16 @@ function App() {
             <Route path= '/message' element={user ? <NotifMessage /> : <Navigate to="/signin" />}/>
             <Route path= '/date' element={user ? <Date /> : <Navigate to="/signin" />} />
             <Route path= '/createkpi' element={user ? <CreateKPI /> : <Navigate to="/signin" />} />
+            <Route path="/updatekpi" element={<UpdateKPI/>} />
             <Route path= '/createtask' element={user ? <CreateTask /> : <Navigate to="/signin" />} />
             <Route path= '/hours' element = {user? <HoursWorked/> : <Navigate to="/signin"/>} />
             <Route path= '/quality' element={user ? <QualityOfWork /> : <Navigate to="/signin" />} />
             <Route path= '/login' element={user ? <LoginAndLogout /> : <Navigate to="/signin" />} />
             <Route path= '/logout' element={<Logout />} />
+            <Route path= '/manager' element={<Dashboard />} />
+            <Route path= '/feedback' element={<Dashboard />} />
+            <Route path= '/rating' element={<Dashboard />} />
+            <Route path= '/scheduled' element={<Dashboard />} />
             <Route path= '/addemployee' element={user ? <AddEmployee /> : <Navigate to="/signin" />}/>
            </Route>
          </Routes>

@@ -20,12 +20,14 @@ const Date = () => {
         display: "flex", 
         flexDirection: isSmallScreen ? 'column' : 'row', 
         margin: "auto", 
-        gap: isSmallScreen ? 2 : 4, 
+        gap: isSmallScreen ? 4 : 10, 
         justifyContent: "center", 
         alignItems: 'center', 
-        ml:'2rem',
-        mr:'2rem',
-        mt:"6rem"
+        ml:'8rem',
+        mr:'4rem',
+        mt:"6rem",
+        color:'white',
+        
       }}>
         <motion.div
           initial={{ opacity: 0, rotate: -10 }}
@@ -58,23 +60,25 @@ const Date = () => {
           transition={{ duration: 0.5 }}
           style={{ 
             flex: 1, 
-            width: isSmallScreen ? '80%' : 'auto' 
+            width: isSmallScreen ? '80%' : 'auto', 
+            
           }}
         >
           <Card
             sx={{
-              background: "#1e1e1e",
-              color: "#1aac83",
-              width: "100%",
+              background: "#808000",
+              color: "#white",
               height: "40vh",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               boxShadow: 3,
-              borderRadius: 2,
+              borderRadius: "10px",
+              fontSize:'bold'
+              
             }}
           >
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <LocalizationProvider  dateAdapter={AdapterDayjs}>
               <DateCalendar />
             </LocalizationProvider>
           </Card>
