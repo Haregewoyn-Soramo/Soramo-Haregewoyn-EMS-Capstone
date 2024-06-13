@@ -79,7 +79,7 @@ const UpdateKPI = () => {
   }, [error]);
 
   return (
-    <Box>
+    <Box backgroundColor="rgba(29, 33, 38, 0.4)" padding="20px">
       <Box m={isSmallScreen ? "1rem" : "1.5rem 2.5rem"}>
         <Header title="Total Worked Hours" subtitle="Reflecting Dedication and Productivity" />
       </Box>

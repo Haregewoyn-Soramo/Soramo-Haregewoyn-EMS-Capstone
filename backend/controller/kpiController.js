@@ -64,13 +64,13 @@ const getAggregateKPIsById = async (req, res) => {
 const updateEmpKPI = async (req, res) => {
   try {
     const id = req.params.id;
-
+console.log("Hhit ")
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).json({ msg: 'Invalid ID' });
     }
 
     const updateEmp = await KPI.findByIdAndUpdate(id, req.body, { new: true, runValidators: true });
-
+console.log("'found",updateEmp)
     if (!updateEmp) {
       return res.status(404).json({ msg: 'Could not find Employee KPI' });
     }

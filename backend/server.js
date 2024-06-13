@@ -31,7 +31,7 @@ emitter.setMaxListeners(20);
 connectBD()
 
 app.use(logger)
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 

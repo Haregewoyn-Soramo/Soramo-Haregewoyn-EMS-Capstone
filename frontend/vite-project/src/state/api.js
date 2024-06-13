@@ -96,7 +96,7 @@ export const api = createApi({
       }),
     updateKPI: build.mutation({
       query: ({id, ...body})=>({
-        method: 'PUT',
+        method: 'PATCH',
         url: `kpi/update/${id}`,
         body,
       }),
