@@ -1,8 +1,11 @@
 Employee Management System
+
+
 Overview
 The Employee Management System is a comprehensive web application designed to manage employee details, track login/logout times, assess key performance indicators (KPIs), send notifications, and collect feedback from managers. This system leverages the MERN stack for robust functionality and JWT for secure authentication. The user interface is crafted with Material-UI for a modern and responsive design.
 
 Table of Contents
+
 Technologies Used
 Features
 Installation
@@ -12,7 +15,10 @@ API Endpoints
 Authentication
 Contributing
 License
+
+
 Technologies Used
+
 MongoDB: Database for storing employee data, login/logout times, KPIs, notifications, and feedback.
 Express.js: Backend framework for building the server and API endpoints.
 React.js: Frontend library for building user interfaces.
@@ -27,6 +33,7 @@ Notifications: Send and receive notifications related to performance and tasks.
 Feedback System: Collect and review feedback from managers.
 Authentication: Secure login and registration using JWT.
 Responsive Design: User interface designed with Material-UI for a seamless experience across devices.
+
 Installation
 Prerequisites
 Node.js
@@ -63,12 +70,12 @@ bash
 Copy code
 # Start the server
 cd server
-npm start
+nodemon
 
 # Start the client
 cd ../client
-npm start
-Open your browser and navigate to http://localhost:3000.
+npm run dev
+Open your browser and navigate to (http://localhost:5173/).
 
 Usage
 Login: Users can log in with their credentials to access the system.
@@ -86,7 +93,7 @@ employee-management-system/
 │   ├── public/            # Public assets
 │   └── src/               # Source files
 │       ├── components/    # Reusable components
-│       ├── pages/         # Application pages
+│       ├── scenes/         # Application pages
 │       ├── App.js         # Main application component
 │       └── index.js       # Entry point
 ├── server/                # Express backend
@@ -100,14 +107,14 @@ employee-management-system/
 └── README.md              # Readme file
 API Endpoints
 Authentication
-POST /api/auth/register: Register a new user.
-POST /api/auth/login: Authenticate a user and return a JWT.
+POST /api/user/register: Register a new user.
+POST /api/login: Authenticate a user and return a JWT.
 Employees
-GET /api/employees: Get all employees.
-POST /api/employees: Add a new employee.
-GET /api/employees/
+GET /api/user: Get all employees.
+POST /api/create/user: Add a new employee.
+GET /api/user/:id
 : Get a single employee by ID.
-PUT /api/employees/
+PUT /api/update/user/
 : Update an employee by ID.
 DELETE /api/employees/
 : Delete an employee by ID.
